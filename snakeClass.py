@@ -14,10 +14,7 @@ class Snake:
         self.tailPauseTimer -= 1
         match self.direction:
             case "North":
-                temp = [0, 0]
-                temp[0] = self.headPos[0]
-                temp[1] = self.headPos[1]
-                self.tailQueue.append(temp)
+                self.tailQueue.append([self.headPos[0], self.headPos[1]])
                 self.headPos[1] -= 10
                 for segment in self.tailQueue:
                     if segment == self.headPos:
@@ -26,10 +23,7 @@ class Snake:
                     return True
 
             case "West":
-                temp = [0, 0]
-                temp[0] = self.headPos[0]
-                temp[1] = self.headPos[1]
-                self.tailQueue.append(temp)
+                self.tailQueue.append([self.headPos[0], self.headPos[1]])
                 self.headPos[0] -= 10
                 for segment in self.tailQueue:
                     if segment == self.headPos:
@@ -38,10 +32,7 @@ class Snake:
                     return True
 
             case "South":
-                temp = [0, 0]
-                temp[0] = self.headPos[0]
-                temp[1] = self.headPos[1]
-                self.tailQueue.append(temp)
+                self.tailQueue.append([self.headPos[0], self.headPos[1]])
                 self.headPos[1] += 10
                 for segment in self.tailQueue:
                     if segment == self.headPos:
@@ -50,10 +41,7 @@ class Snake:
                     return True
 
             case "East":
-                temp = [0, 0]
-                temp[0] = self.headPos[0]
-                temp[1] = self.headPos[1]
-                self.tailQueue.append(temp)
+                self.tailQueue.append([self.headPos[0], self.headPos[1]])
                 self.headPos[0] += 10
                 for segment in self.tailQueue:
                     if segment == self.headPos:

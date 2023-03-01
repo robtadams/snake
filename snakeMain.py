@@ -21,7 +21,6 @@ def main():
     moveBuffer = 2
     pygame.draw.rect(window, "Black", [snake.headPos, (10,10)])
     
-
     while running:
         pygame.display.update()
         window.fill(windowColor)

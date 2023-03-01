@@ -22,4 +22,3 @@ class Food:
             return False
 
         return True
-    
