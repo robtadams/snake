@@ -7,8 +7,7 @@ def main():
     """
     Initialize pygame's display and font functions
     """
-    pygame.display.init()
-    pygame.font.init()
+    
 
     """
     Create variables for:
