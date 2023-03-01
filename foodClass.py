@@ -6,7 +6,6 @@ class Food:
         self.Color = pygame.Color("Orange")
         self.position = [-1, -1]
         self.windowWidth, self.windowHeight = pygame.display.get_surface().get_size()
-        self.foodExists = False
 
     def spawnFood(self):
         randX = random.randint(0, (self.windowWidth - 10) // 10)
@@ -19,10 +18,8 @@ class Food:
 
     def eatFood(self, snakePos):
         if snakePos == self.position:
-            self.foodExists = False
             self.spawnFood()
+            return False
 
-        else:
-            self.foodExists = True
-
-        return self.foodExists
+        return True
+    

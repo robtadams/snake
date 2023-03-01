@@ -19,8 +19,11 @@ class Snake:
                 temp[1] = self.headPos[1]
                 self.tailQueue.append(temp)
                 self.headPos[1] -= 10
+                for segment in self.tailQueue:
+                    if segment == self.headPos:
+                        return True
                 if self.headPos[1] < 0:
-                    self.headPos[1] = 0
+                    return True
 
             case "West":
                 temp = [0, 0]
@@ -28,8 +31,11 @@ class Snake:
                 temp[1] = self.headPos[1]
                 self.tailQueue.append(temp)
                 self.headPos[0] -= 10
+                for segment in self.tailQueue:
+                    if segment == self.headPos:
+                        return True
                 if self.headPos[0] < 0:
-                    self.headPos[0] = 0
+                    return True
 
             case "South":
                 temp = [0, 0]
@@ -37,8 +43,11 @@ class Snake:
                 temp[1] = self.headPos[1]
                 self.tailQueue.append(temp)
                 self.headPos[1] += 10
+                for segment in self.tailQueue:
+                    if segment == self.headPos:
+                        return True
                 if self.headPos[1] > self.windowHeight - 10:
-                    self.headPos[1] = self.windowHeight - 10
+                    return True
 
             case "East":
                 temp = [0, 0]
@@ -46,8 +55,11 @@ class Snake:
                 temp[1] = self.headPos[1]
                 self.tailQueue.append(temp)
                 self.headPos[0] += 10
+                for segment in self.tailQueue:
+                    if segment == self.headPos:
+                        return True
                 if self.headPos[0] > self.windowWidth - 10:
-                    self.headPos[0] = self.windowWidth - 10
+                    return True
 
 if __name__ == "__main__":
     print()
